@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    background: radial-gradient(circle, #38244f, #130d25, #080817);
+    color: white;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* PANTALLA INICIAL */
+
+.pantalla-inicial {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #241333, #713d70, #30204c);
+    transition: opacity 1s, visibility 1s;
+}
+
+.pantalla-inicial.ocultar {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.flores-inicio {
+    font-size: 55px;
+    margin-bottom: 25px;
+    animation: flotar 3s infinite ease-in-out;
+}
+
+.pantalla-inicial h1 {
+    color: #ffd8ee;
+    font-size: clamp(25px, 5vw, 38px);
+    margin-bottom: 15px;
+}
+
+.pantalla-inicial p {
+    margin-bottom: 30px;
+    color: #f4d9ee;
+}
+
+button {
+    padding: 14px 28px;
+    border: 1px solid #ffc5e5;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #c65b9c, #8c55b9);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 20px #e99bd0;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.contenido {
+    display: none;
+    min-height: 100vh;
+    position: relative;
+    padding: 50px 20px;
+    overflow: hidden;
+}
+
+.contenido.mostrar {
+    display: block;
+    animation: aparecer 1.5s;
+}
+
+.subtitulo {
+    color: #edc5e5;
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.titulo {
+    font-size: clamp(35px, 7vw, 65px);
+    color: #ffd2ec;
+    margin-top: 20px;
+    text-shadow: 0 0 20px #e68acb;
+}
+
+.nombre {
+    font-size: clamp(27px, 5vw, 42px);
+    color: #f5b7e1;
+    margin-top: 10px;
+}
+
+/* CORAZÓN */
+
+#corazon {
+    width: min(420px, 90vw);
+    height: 330px;
+    margin: 10px auto;
+    display: block;
+}
+
+.frase {
+    max-width: 500px;
+    margin: 0 auto 25px;
+    color: #f8dff0;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* FLORES Y DECORACIONES */
+
+.decoracion {
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    font-size: 45px;
+    animation: flotar 4s infinite ease-in-out;
+}
+
+.flor2 {
+    top: 35%;
+    left: 3%;
+    animation-delay: 1s;
+}
+
+.flor3 {
+    top: 18%;
+    right: 8%;
+    left: auto;
+    animation-delay: 2s;
+}
+
+.flor4 {
+    top: 55%;
+    right: 4%;
+    left: auto;
+    animation-delay: 1.5s;
+}
+
+.globos {
+    font-size: 35px;
+    margin-top: 15px;
+    animation: flotar 3s infinite ease-in-out;
+}
+
+/* CARTA */
+
+.carta {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 470px);
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 40px 25px;
+    border: 2px solid #edb5d9;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #fff0f8, #f4d9ef);
+    color: #58345b;
+    box-shadow: 0 0 50px #eaa0d8;
+}
+
+.carta.abierta {
+    display: block;
+    animation: aparecer 0.7s;
+}
+
+.carta h2 {
+    color: #a44d91;
+    margin-bottom: 20px;
+}
+
+.carta p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.carta h3 {
+    color: #ad5798;
+    margin-top: 20px;
+}
+
+.flores-carta {
+    font-size: 35px;
+    margin: 15px;
+}
+
+.firma {
+    font-style: italic;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    padding: 5px 13px;
+    background: #b75b9b;
+    font-size: 22px;
+    border: none;
+}
+
+/* ANIMACIONES */
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .contenido {
+        padding-top: 30px;
+    }
+
+    .decoracion {
+        font-size: 28px;
+    }
+
+    .frase {
+        font-size: 16px;
+    }
+}
